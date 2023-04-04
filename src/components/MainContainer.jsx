@@ -3,6 +3,7 @@ import {POPULAR_VIDEOS} from "../constants";
 import checkmark from './../assets/checkmark.png';
 import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
+console.log(POPULAR_VIDEOS);
 
 const MainContainer = () => {
     const [videos, setVideos] = useState(null);
@@ -15,6 +16,7 @@ const MainContainer = () => {
     const getVideos = async () => {
         const response = await fetch(POPULAR_VIDEOS)
         const json = await response.json()
+        console.log(json);
         setVideos(json)
     }
 
